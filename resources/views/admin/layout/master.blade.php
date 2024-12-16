@@ -5,11 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+{{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+    <title>{{$title ?? 'Админка'}}</title>
 </head>
 <body>
-@if ($test = true)
-<div>Привет!</div>
-@endif
+<h1>{{$title ? $title : 'название Admin-старницы'}}</h1>
+<p>Описание страницы: {{$description}}</p>
+
+    @yield('content')
+
 </body>
 </html>
